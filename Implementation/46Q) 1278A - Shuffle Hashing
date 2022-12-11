@@ -1,0 +1,43 @@
+void answer(){
+string p,h;
+cin>>p;
+cin>>h;
+ll n=p.length();
+vector<ll>h1(26,0);
+vector<ll>h2(26,0);
+for (ll i = 0; i < n; ++i){
+    h1[p[i]-'a']++;
+}
+for (ll i=0;i<n; ++i){
+    h2[h[i]-'a']++;
+}
+bool al1=true;
+    for(ll j=0;j<26;j++){
+        if(h2[j]!=h1[j]){
+            al1=false;
+            break;
+        }
+    }
+if(al1){
+        cout<<"YES"<<endl;
+        return;
+}
+// debug(h2);
+for (ll i=n;i<h.length(); ++i){
+    h2[h[i-n]-'a']--;
+    h2[h[i]-'a']++;
+    // debug(h2);
+    bool al=true;
+    for(ll j=0;j<26;j++){
+        if(h2[j]!=h1[j]){
+            al=false;
+            break;
+        }
+    }
+    if(al){
+        cout<<"YES"<<endl;
+        return;
+    }
+}
+cout<<"NO"<<endl;
+}

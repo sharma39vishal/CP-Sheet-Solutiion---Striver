@@ -1,0 +1,14 @@
+void answer(){
+string s;
+cin>>s;
+ll lo=INT_MAX,ans=0;
+for (ll i = 0; i < s.length(); ++i){
+    if(s[i]=='1'){
+     if(lo!=INT_MAX&&lo!=i-1){
+            ans+=i-lo-1;
+      }
+        lo=i;
+    }
+}
+cout<<ans<<endl;
+}

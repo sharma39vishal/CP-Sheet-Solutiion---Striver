@@ -1,0 +1,17 @@
+void answer(){
+ll n;
+cin>>n;
+ll ans=0;
+ll re=n;
+while(re!=0){
+    if(re==n){
+        ans+=re;
+    }
+    else{
+        ans+=(re);
+        ans+=(n-re)*(re-1);
+    }
+    re--;
+}
+cout<<ans<<endl;
+}

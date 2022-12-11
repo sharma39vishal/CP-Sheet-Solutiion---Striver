@@ -1,0 +1,22 @@
+void answer(){
+ll n;
+cin>>n;
+vector<pair<ll,ll>>v;
+priority_queue<ll>pq;
+for(ll i=1;i<=n;i++){
+    pq.push(i);
+}
+
+for(ll i=1;i<n;i++){
+    ll a=pq.top();
+    pq.pop();
+    ll b=pq.top();
+    pq.pop();
+    v.push_back({a,b});
+    pq.push((a+b+1)/2);
+}
+cout<<2<<endl;
+for(ll i = 0; i<v.size(); ++i){
+    cout<<v[i].first<<" "<<v[i].second<<endl;
+}
+}

@@ -1,0 +1,24 @@
+void answer(){
+string s,t;
+cin>>s;
+cin>>t;
+ll fh=((t[0]-'0')*10+(t[1]-'0'))-((s[0]-'0')*10+(s[1]-'0'));
+ll nxt=(fh*60)+(((t[3]-'0')*10+(t[4]-'0'))-((s[3]-'0')*10+(s[4]-'0')));
+nxt/=2;
+// cout<<nxt<<endl;
+// cout<<nxt/60<<" "<<nxt%60<<endl;
+ll ansh=(s[0]-'0')*10+(s[1]-'0')+(nxt/60);
+ll ansm=(s[3]-'0')*10+(s[4]-'0')+(nxt%60);
+ansh+=ansm/60;
+ansm=ansm%60;
+
+if(ansh<10){
+    cout<<'0';
+}
+cout<<ansh;
+cout<<":";
+if(ansm<10){
+    cout<<'0';
+}
+cout<<ansm<<endl;
+}

@@ -1,0 +1,60 @@
+#include <bits/stdc++.h>
+using namespace std;
+typedef long long int  ll;
+
+void answer(){
+string s;
+cin>>s;
+ll o=0,t=0,th=0;
+for (ll i = 0; i < s.length(); i+=2){
+    if (s[i]=='1'){
+        o++;
+    }
+    else if(s[i]=='2'){
+        t++;
+    }
+    else{
+        th++;
+    }
+}
+
+ll n=o;
+while(o){
+    if (o==n){
+        cout<<"1";
+    }
+    else{
+        cout<<"+1";
+    }
+    o--;
+}
+o=n;
+n=t;
+while(t){
+ if ((t==n&&o==0)){
+        cout<<"2";
+    }
+    else{
+        cout<<"+2";
+    }   
+    t--;
+}
+t=n;
+n=th;
+while(th){
+ if ((th==n&&t==0&&o==0)){
+        cout<<"3";
+    }
+    else{
+        cout<<"+3";
+    }   
+    th--;
+}
+cout<<endl;
+}
+
+
+int main(){
+    answer();
+return 0;
+}

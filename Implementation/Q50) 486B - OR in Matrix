@@ -1,0 +1,94 @@
+void answer(){
+ll m,n;
+cin>>m>>n;
+vector<vector<ll>>v(m,vector<ll>(n,0));
+vector<vector<ll>>ans(m,vector<ll>(n,0));
+vector<vector<ll>>tmp(m,vector<ll>(n,0));
+vector<ll>x(m,0);
+vector<ll>y(n,0);
+for (ll i = 0; i <m ; ++i){
+    for (ll j = 0; j < n; ++j){
+        cin>>v[i][j];
+    }
+}
+for (ll i = 0; i <m ; ++i){
+        if(v[i][0]==1){
+            ll tx=0;
+         for (ll j = 0; j < n; ++j){
+            if(v[i][j]==1){
+                tx++;
+            }
+            else{
+                break;
+            }
+         }
+         if(tx==n){
+            x[i]=1;
+         }
+        }
+}
+for (ll i = 0; i <n ; ++i){
+        if(v[0][i]==1){
+            ll tx=0;
+         for (ll j = 0; j < m; ++j){
+            if(v[j][i]==1){
+                tx++;
+            }
+            else{
+                break;
+            }
+         }
+         if(tx==m){
+            y[i]=1;
+         }
+    }
+}
+
+vector<ll>x1(m,0);
+vector<ll>y1(n,0);
+for (ll i = 0; i <m; ++i){
+    for (ll j = 0; j <n; ++j){
+        if(x[i]&&y[j]){
+            ans[i][j]=1;
+            x1[i]=1;
+            y1[j]=1;
+        }
+    }
+}
+
+
+for (ll i = 0; i <m; ++i){
+    for (ll j = 0; j <n; ++j){
+        if(x1[i]){
+            tmp[i][j]=1;
+        }
+    }
+}
+
+for (ll i = 0; i <n; ++i){
+    for (ll j = 0; j <m; ++j){
+        if(y1[i]){
+            tmp[j][i]=1;
+        }
+    }
+}
+
+// debug(tmp);
+for (ll i = 0; i <m; ++i){
+    for (ll j = 0; j <n; ++j){
+        if(tmp[i][j]!=v[i][j]){
+                cout<<"NO"<<endl;
+                return;
+        }
+    }
+}
+cout<<"YES"<<endl;
+for (ll i = 0; i <m; ++i){
+    for (ll j = 0; j <n; ++j){
+            cout<<ans[i][j]<<" ";
+    }
+    cout<<endl;
+}
+
+
+}

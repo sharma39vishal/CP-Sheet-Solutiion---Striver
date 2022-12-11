@@ -1,0 +1,39 @@
+void answer(){
+ll x,y,z;
+cin>>x>>y>>z;
+if(x==y&&y==z){
+    cout<<"YES"<<endl;
+    cout<<x<<" "<<y<<" "<<z<<endl;
+    return;
+}
+if(x==y){
+    if(x<z){
+        cout<<"NO"<<endl;
+        return;
+    }
+    cout<<"YES"<<endl;
+    cout<<x<<" "<<z<<" "<<z<<endl;
+    return;
+}
+if(z==y){
+    if(z<x){
+        cout<<"NO"<<endl;
+        return;
+    }
+    cout<<"YES"<<endl;
+    cout<<x<<" "<<x<<" "<<z<<endl;
+    return;
+}
+if(x==z){
+    if(x<y){
+        cout<<"NO"<<endl;
+        return;
+    }
+    cout<<"YES"<<endl;
+    cout<<x<<" "<<y<<" "<<y<<endl;
+    return;
+}
+cout<<"NO"<<endl;
+
+
+}

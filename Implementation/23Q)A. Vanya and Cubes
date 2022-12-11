@@ -1,0 +1,14 @@
+void answer(){
+ll n;
+cin>>n;
+ll ans=0,i=1;
+while(n>0){
+    n-=(i*(i+1)/2);
+    i++;
+    if(n<0){
+        break;
+    }
+    ans++;
+}
+cout<<ans<<endl;
+}

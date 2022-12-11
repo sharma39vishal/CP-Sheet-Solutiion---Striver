@@ -1,0 +1,10 @@
+void answer(){
+ll x,y;
+cin>>x>>y;
+if(x*2>y){
+    cout<<"-1 -1"<<endl;
+    return;
+}
+cout<<x<<" "<<x*2<<endl;
+
+}

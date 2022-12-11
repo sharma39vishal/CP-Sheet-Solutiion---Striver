@@ -1,0 +1,21 @@
+void answer(){
+ll n;
+cin>>n;
+string s;
+cin>>s;
+vector<ll>v;
+for (ll i = 0; i < n; ++i){
+    if(s[i]=='1'){
+        v.push_back(i);
+    }
+}
+if (v.size()==0){
+    cout<<n<<endl;
+    return;
+}
+if (v.size()==1){
+    cout<<max((v[0]+1)*2,(n-v[0])*2)<<endl;
+    return;
+}
+cout<<max((n-v[0])*2,(v[v.size()-1]+1)*2)<<endl;
+}

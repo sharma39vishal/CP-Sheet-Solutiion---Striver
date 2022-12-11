@@ -1,0 +1,16 @@
+void answer(){
+ll n;
+cin>>n;
+string s,ans;
+cin>>s;
+ll x=0;
+for (ll i = 0; i < n; ++i){
+    ll t=x;
+    ans+=s[i];
+    while(t--){
+        i++;
+    }
+    x++;
+}
+cout<<ans<<endl;
+}

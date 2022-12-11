@@ -1,0 +1,22 @@
+void answer(){
+ll n;
+cin>>n;
+ll ans=0;
+ll tmp=1;
+ll cn=1;
+ll r=1;
+while(tmp!=n){
+    ans+=r;
+    // cout<<tmp<<" : "<<r<<" , ";
+    tmp*=10;
+    tmp+=cn;
+    r++;
+    if(tmp>10000){
+        cn++;
+        tmp=cn;
+        r=1;
+    }
+}
+ans+=r;
+cout<<ans<<endl;
+}

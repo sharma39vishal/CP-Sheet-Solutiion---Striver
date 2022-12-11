@@ -1,0 +1,15 @@
+void answer(){
+ll n,x;
+cin>>n>>x;
+if(n==1||n==2){
+    cout<<1<<endl;
+    return;
+}
+ll ans=1;
+ll r=2;
+while(n>r){
+    r+=x;
+    ans++;
+}
+cout<<ans<<endl;
+}

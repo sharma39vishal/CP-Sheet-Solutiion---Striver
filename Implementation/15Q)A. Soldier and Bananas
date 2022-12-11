@@ -1,0 +1,11 @@
+void answer(){
+ll k,n,w;
+cin>>k>>n>>w;
+w=k*(w*(w+1)/2);
+if(n>=w){
+ cout<<0<<endl;
+}
+else{
+  cout<<w-n<<endl;
+}
+}

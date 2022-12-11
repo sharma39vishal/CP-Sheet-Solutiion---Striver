@@ -1,0 +1,28 @@
+void answer(){
+ll n;
+cin>>n;
+string s;
+cin>>s;
+vector<ll>v(26,0);
+for (ll i = 0; i < s.length(); ++i){
+    v[s[i]-'a']++;
+}
+for (ll i = 0; i < 26; ++i){
+    if(v[i]%n!=0){
+        cout<<-1<<endl;
+        return;
+    }
+}
+
+string ans;
+for (ll i = 0; i <26; ++i){
+    for(ll j=0;j<(v[i]/n);j++){
+        ans+=('a'+i);
+    }
+}
+string ans1;
+for (ll i = 0; i < n; ++i){
+    ans1+=ans;
+}
+cout<<ans1<<endl;
+}

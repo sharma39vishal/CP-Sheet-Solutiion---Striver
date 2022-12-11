@@ -1,0 +1,15 @@
+void answer(){
+ll a,b,n;
+cin>>a>>b>>n;
+ll ans=0;
+while(a<=n&&b<=n){
+    if(a<b){
+        a+=b;
+    }
+    else{
+        b+=a;
+    }
+    ans++;
+}
+cout<<ans<<endl;
+}

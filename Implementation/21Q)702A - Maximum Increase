@@ -1,0 +1,20 @@
+void answer(){
+ll n;
+cin>>n;
+ll pr=INT_MIN;
+ll ans=0,tmp=0;
+for (ll i = 0; i < n; ++i){
+    ll a;
+    cin>>a;
+    if(a>pr){
+        tmp++;
+    }
+    else{
+        pr=INT_MIN;
+        tmp=1;
+    }
+    pr=a;
+    ans=max(ans,tmp);
+}
+cout<<ans<<endl;
+}

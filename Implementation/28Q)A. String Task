@@ -1,0 +1,17 @@
+#include<bits/stdc++.h>
+using namespace std;
+#define ll long long
+
+int main(){
+
+
+string s,ans;
+cin>>s;
+for (ll i = 0; i < s.length(); i++){
+    if (!(tolower(s[i])=='a'||tolower(s[i])=='i'||tolower(s[i])=='o'||tolower(s[i])=='y'||tolower(s[i])=='e'||tolower(s[i])=='u')){
+       ans+='.';
+       ans+=tolower(s[i]);
+    }
+}
+cout<<ans<<endl;
+}
